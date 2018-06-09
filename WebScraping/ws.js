@@ -36,10 +36,11 @@ app.get('/apartments', function (req, res, next) {
                     rooms: rooms1
                 }
 
+                //Agregarlo a la lista de apartamentos.
                 apartments.push(apartment);
 
 
-
+                //Agregarlos a la base de datos.
                 db.none("insert into aparts ( title, ubication, descrip, price, timee, rooms) values('" + title1 + "', '" + ubication1 + "', '" + description1 + "', '" + price1 +
                         "', '" + time1 + "','" + rooms1 + "')")
                     .then(function () {

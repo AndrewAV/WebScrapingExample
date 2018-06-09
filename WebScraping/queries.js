@@ -8,6 +8,7 @@ var pgp = require('pg-promise')();
 var connectionString = 'postgres://postgres:1234@localhost:5432/webScrapingApartments';
 var db = pgp(connectionString);
 
+//Para obtener todos los apartamentos
 function getAllAparts(req, res, next) {
     db.any('select * from aparts')
         .then(function (data) {
